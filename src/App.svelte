@@ -1,30 +1,34 @@
 <script>
   import svelteLogo from './assets/svelte.svg'
   import Counter from './lib/Counter.svelte'
+
 </script>
 
-<main class="h-80 overflow-y-auto ">
-  <div>
+<main class="container mx-auto  ">
+
+  <div class="pt-5 flex space-x-4">
     <a href="https://vitejs.dev" target="_blank" rel="noreferrer"> 
       <img src="/vite.svg" class="logo" alt="Vite Logo" />
     </a>
     <a href="https://svelte.dev" target="_blank" rel="noreferrer"> 
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
-  </div>
-  <h1>Vite + Svelte</h1>
 
-  <div class="card">
+    <a href="https://tailwindcss.com" target="_blank" rel="noreferrer"> 
+      <svg viewBox="0 0 80 31" class="text-slate-900 dark:text-white w-auto h-7">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.517 0C18.712 0 14.46 3.382 12.758 10.146c2.552-3.382 5.529-4.65 8.931-3.805 1.941.482 3.329 1.882 4.864 3.432 2.502 2.524 5.398 5.445 11.722 5.445 6.804 0 11.057-3.382 12.758-10.145-2.551 3.382-5.528 4.65-8.93 3.804-1.942-.482-3.33-1.882-4.865-3.431C34.736 2.92 31.841 0 25.517 0zM12.758 15.218C5.954 15.218 1.701 18.6 0 25.364c2.552-3.382 5.529-4.65 8.93-3.805 1.942.482 3.33 1.882 4.865 3.432 2.502 2.524 5.397 5.445 11.722 5.445 6.804 0 11.057-3.381 12.758-10.145-2.552 3.382-5.529 4.65-8.931 3.805-1.941-.483-3.329-1.883-4.864-3.432-2.502-2.524-5.398-5.446-11.722-5.446z" fill="#38bdf8"></path>
+      </svg>
+    </a>
+
+  </div>
+  <h1>Vite  Svelte  Tailwind</h1>
+  <br>
+
+  <p>Probando tailwind y svelte </p>
+
+  <button class="btn btn-primary ">
     <Counter />
-  </div>
+  </button>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
 
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas impedit voluptates, dolorum quisquam fugit deleniti nulla esse rerum vitae voluptatem vel, facere laborum explicabo, delectus aliquid voluptas! Autem voluptate officia quo eaque hic, deserunt, voluptas quam fugit reiciendis ipsum aliquid. Maxime veritatis exercitationem reiciendis necessitatibus impedit, ab, quibusdam nostrum optio facere nesciunt quas eveniet! Possimus mollitia minima blanditiis eaque animi repudiandae. Sit expedita laboriosam animi veritatis. Culpa rem unde facere adipisci, suscipit ut expedita odio nisi, alias reiciendis itaque in mollitia ipsa reprehenderit? Magnam perferendis voluptatibus consectetur mollitia esse culpa enim similique doloribus dicta est et, quaerat id sint pariatur illo ea officia libero ipsa reprehenderit aliquid odit cum! Optio eos deserunt, sed minus unde dolores sit ea voluptatibus animi eaque nihil eum, veritatis nesciunt. Repellat, voluptate. Voluptatem, consequatur molestias. Est magni velit illum fuga optio nobis dolorum minima doloremque architecto quos. Nemo provident quae perspiciatis sed voluptatem ipsam nam quos! Libero quae rem ratione vero molestias alias aliquid minus neque, velit autem aliquam ex doloremque temporibus inventore placeat earum dicta sapiente recusandae eos iure blanditiis totam, quaerat commodi. Similique modi, pariatur qui porro in eligendi blanditiis adipisci, ipsam magnam excepturi velit aliquid perferendis nesciunt facilis veritatis nemo soluta repudiandae. 
-  </p>
 </main>
-
