@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+   :root {
+      --color-success:  40 199 111;  /*'#28c76f',*/
+      --color-error:   234  84  85;  /*'#ea5455',*/
+      --color-caution: 255 159  67;  /*'#ff9f43',*/
+      --color-info:      0 207 232;  /*'#00cfe8',*/
+
+      /* cambiando themas los  temas por default se cargan en una class aparte*/
+      /* cambio las etiquetas base por ejemplo
+      a {
+         @apply text-center text-blue-300;
+      } */
+   }
+
+} /** final de base **/
+
+
+/* para modificar las funcione o utilidades
+@layer  utilitie{
+   .p-89{
+      @apply p-5;
+   }
+} */
+
+/* aqui van mis estilos modificados o personalizados*/
+@layer components {
+
+   .transition-100{
+      @apply transition-all duration-100;
+   }
+   .transition-200{
+      @apply transition-all duration-200;
+   }
+   .transition-300{
+      @apply transition-all duration-300;
+   }
+
+   .btn {
+      @apply py-2 px-4  rounded-lg  outline-none  active:scale-95 select-none ;  /* funciona con esto transition-all duration-200 */
+   }
+   .btn-primary {
+      @apply btn  text-white  bg-primary-500  hover:shadow-lg hover:shadow-primary-500/50  transition-all duration-100 ;
+   }
+   
+   .btn-success {
+      @apply btn  text-white  bg-success  hover:shadow-lg hover:shadow-success/50  transition-all duration-200 ;
+   }
+   .btn-error {
+      @apply btn  text-white  bg-error  hover:shadow-lg hover:shadow-error/50  transition-all duration-200 ;
+   }
+   .btn-warning {
+      @apply btn  text-white  bg-warning-500  hover:shadow-lg hover:shadow-warning-500/50  transition-all duration-200 ;
+   }
+   .btn-info {
+      @apply btn  text-white  bg-info  hover:shadow-lg hover:shadow-info/50  transition-all duration-200 ;
+   }
+   /* boton outline */
+   .btn-reset {
+      @apply py-2 px-4 outline-none  hover:shadow-lg rounded-lg active:scale-95 select-none  border border-gray-300 dark:border-gray-600 ;
+      
+   }
+
+
+   .color-app-text {
+      @apply text-surface-600   dark:text-surface-400;
+   }
+
+   .menu-hover {
+      @apply hover:ml-1 transition-300;  /* menu-transition;  efecto de movimiento al pasar el mouse*/
+   }
+   .menu-item {
+      @apply overflow-hidden overflow-ellipsis whitespace-nowrap; /*acorta el texto si el menu es pequeño*/
+   }
+
+   .menu-active {
+      @apply bg-gradient-to-r from-primary-500 to-primary-500/80   shadow-lg  shadow-primary-500/60 rounded text-primary-50 ;
+   }
+
+   .menu-select {
+      /* colores para la opcion seleccionada  */
+      /* @apply text-surface-900 dark:text-surface-300   bg-surface-200  dark:bg-surface-700 rounded; */
+      @apply text-accent-900 dark:text-accent-300   bg-surface-200  dark:bg-surface-700 rounded;
+   }
+   .menu-option {
+      /* colores normales de las opciones del menu  */
+      @apply text-accent-800/90  dark:text-accent-400/90   ;
+      /* @apply text-accent-900/90  dark:text-accent-300/90   ; */
+   }
+
+   .icon-space{
+      @apply flex-shrink-0 ml-1 mr-4 ;
+   }
+
+   /* nuevos */
+   .flex-center {
+      @apply flex items-center justify-center; /* centra en todos sentidos */
+   }
+   /* .flex-center-l*/
+   .flex-center-x {
+      @apply flex items-center; /* centra en forma lineal */
+
+   }
+   .flex-edicion {
+      @apply  flex flex-col tablet:flex-row; /*para los manteniminetos*/
+   }
+
+   .form_border{
+      /* el color designado aqui despues se reemplaza por borde color , es es por el mamaño del boder  */
+      border: 1px solid rgb(var(--color-surface-400)/0.5);
+   }
+
+   /* border-surface-400/50 */
+   .control-input{
+      @apply px-2 py-[3px] form_border outline-0 rounded-md block w-full bg-transparent text-surface-900 hover:border-surface-400 
+      placeholder-surface-400 
+      disabled:bg-surface-200/60 disabled:text-surface-400 disabled:border-surface-400/40 disabled:shadow-none
+      read-only:bg-surface-200/80 read-only:text-surface-400 read-only:border-surface-400/40
+      focus:border-primary-500 focus:shadow-md
+      invalid:border-warning-400  invalid:text-warning-500  focus:invalid:border-warning-400 focus:invalid:ring-warning-400
+      dark:text-surface-200 dark:border-surface-500/60 dark:focus:border-primary-500 
+      dark:invalid:text-warning-500 dark:placeholder-surface-700/50 
+      dark:disabled:text-surface-500 dark:disabled:bg-surface-800/50
+      dark:read-only:text-surface-500  dark:read-only:bg-surface-800/40
+      dark:hover:border-surface-500 
+      ;
+   }
+
+   .control-checkbox{
+      @apply appearance-none h-4 w-4 form_border  rounded
+      accent-primary-500  focus:outline-0 focus:shadow focus:border-primary-500
+      dark:border-surface-500/60 dark:focus:border-primary-500
+      dark:hover:border-surface-500 dark:hover:checked:bg-primary-500/90
+      hover:border-surface-400 hover:checked:bg-primary-500/90
+      checked:bg-primary-500 checked:border-primary-500 
+      disabled:bg-surface-300 disabled:hover:bg-surface-200   disabled:border-surface-400/40 
+      dark:disabled:bg-surface-700/90  dark:disabled:hover:bg-surface-800 
+      ;
+      
+   }
+   .control-checkbox[type=checkbox]:checked {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-0.25 -0.5 9 9'%3E%3Cpath fill='%23FFFFFF' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 70% 70%;
+      background-position: center;
+   }
+
+
+   .control-toggle{
+      @apply appearance-none cursor-pointer rounded-full  w-12 h-6
+      form_border  dark:border-surface-600
+      focus:outline-0 focus:shadow
+      focus:border-primary-500  dark:focus:border-primary-500
+      hover:border-primary-400  dark:hover:border-surface-500
+      checked:border-primary-500 dark:checked:border-primary-500 dark:hover:checked:border-primary-500/90
+      ;
+   }
+
+
+   .control-radiobutton{
+      @apply appearance-none h-4 w-4 rounded-full
+      form_border focus:ring-offset-0 focus:outline-0
+      dark:border-surface-500/60
+      hover:border-surface-400 dark:hover:border-surface-500 
+      focus:border-primary-500 dark:focus:border-primary-500
+      checked:bg-primary-500/90 checked:border-primary-600/70
+   }
+ 
+   .flex-edicion {
+      @apply  flex flex-col tablet:flex-row;
+   }
+
+   /* para los fondos principales de las paginas */
+   .paper{
+      @apply bg-surface-50   dark:bg-surface-900;
+   }
+   /* color para las tarjetas */
+   .card{
+      /* @apply  rounded-md drop-shadow-xl; (si le pongo shadow al card, no funciona el dropdown) porque usa filter */
+      @apply bg-surface-200 dark:bg-surface-800  rounded-md shadow-lg;
+   }
+
+
+
+   /* @import "components/scroll"; */
+   /* @import "./scroll.css"; no funciona  */
+   /* scrollbar-width y scrollbar-color solo funciona en Firefox  */
+   /* === Scrollbars === */
+   ::-webkit-scrollbar {
+      @apply w-[6px]  rounded-[5px] ;
+   }
+   
+
+    /*fondo del scroll los dark no funcionan */
+   ::-webkit-scrollbar-track {
+      /* @apply bg-surface-100 px-[1px]  ; */
+      @apply bg-transparent  px-[1px]  ;
+   }
+   /* ::-webkit-scrollbar-track::.dark {
+      / * @apply bg-surface-500 ; * /
+      background-color: red   !important ;
+   } */
+
+   /*area movible del scroll*/
+   ::-webkit-scrollbar-thumb {
+      @apply rounded-full bg-surface-300;
+      /* @apply rounded-full bg-ternary-500; */
+   }
+   /* ::-webkit-scrollbar-thumb, .dark {
+      @apply bg-red-700; /* area movible del scroll * /
+   }  */
+
+   ::-webkit-scrollbar-thumb:hover {
+      @apply bg-surface-400/70;
+   }
+   /* ::-webkit-scrollbar-thumb:hover, .dark {
+      @apply bg-red-800/90 ;
+   } */
+
+
+   /* barra horizontal */
+   ::-webkit-scrollbar:horizontal {
+      height: 6px;
+   }
+   ::-webkit-scrollbar-corner{
+      display: none;
+   }
+
+
+
+   /* scroll horizontal para flex 
+   class="flex flex-nowrap overflow-x"  asi no funciona
+   */
+   .scrollx-wrapper {
+      display                   : flex;
+      flex-wrap                 : nowrap;
+      overflow-x                : auto;   
+      /* para que rebote  */
+      -webkit-overflow-scrolling: touch;   
+   }
+   .scrollx-wrapper::-webkit-scrollbar {
+      /*para safari, opera android */
+      display: none; 
+      width: 3px; /* para moverlo cuando estamos en pantalla completa */
+   }
+
+   /* oculta la barra de desplazamiento horizobntal con snap */
+   /* Hide scrollbar for Chrome, Safari and Opera */
+   .container-snap::-webkit-scrollbar {
+      display: none;
+   }
+   /* Hide scrollbar for IE, Edge and Firefox */
+   .container-snap {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+   }
+
+ 
+}
